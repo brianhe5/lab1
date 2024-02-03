@@ -78,10 +78,13 @@ int main(int argc, char *argv[])
 		fprintf(stdout, "testing");
     	// In the child process
     	if (child_pid == 0) {
+			fprintf(stdout, "enters child");
 
 			// Since the first child does not need to write (input) into the pipe, we can close write end
 			//First child doesnt care about stdin, sends stdout to write
 			if (i == 1) {
+				fprintf(stdout, "enters i==0");
+
 				//makes stdout pointer point to fds: 4 (write)
 				dup2(pipe_fds[1], 1);
 				
@@ -139,6 +142,7 @@ int main(int argc, char *argv[])
 
     	// In the parent process
     	else {
+		fprintf(stdout, "enters parent");
 
 		//exit status
 
@@ -173,6 +177,7 @@ int main(int argc, char *argv[])
 
 		//closes fds(3) read
 		close(pipe_fds[0]);
+		fprintf(stdout, "end ofparent");
 
     	}
 	}
