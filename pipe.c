@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 			else if (i == argc-1){
 				//make stdin point to last pipe's read
 				//dup2(pipe_fds[0], 0);
-
+				fprintf(stdout, "enters lastcase");
 				//clean up fds
 				close(pipe_fds[1]);
 				close(pipe_fds[0]);
