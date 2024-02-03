@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
         }
         //create fork
 		child_pid = fork();
-		
+
         if (child_pid == -1) {
             perror("fork");
             exit(errno);
@@ -160,6 +160,8 @@ int main(int argc, char *argv[])
             exit(errno);
             //exits with error number
         }
+		fprintf(stdout, "child finished");
+
         if (WIFEXITED(status) && WEXITSTATUS(status) !=0) {
             fprintf(stderr, "child exited with: %d\n", WEXITSTATUS(status));
             exit(WEXITSTATUS(status));
