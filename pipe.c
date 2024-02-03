@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 			//last process changes stdin to read and keeps fds(1) stdout the same
 			else if (i == argc-1){
 				//make stdin point to last pipe's read
-				dup2(pipe_fds[0], 0);
+				//dup2(pipe_fds[0], 0);
 
 				//clean up fds
 				close(pipe_fds[1]);
