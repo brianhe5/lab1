@@ -75,6 +75,7 @@ int main(int argc, char *argv[])
         	perror("fork");
         	exit(errno);
 		}
+		fprintf(stdout, "testing");
     	// In the child process
     	if (child_pid == 0) {
 
