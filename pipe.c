@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         	perror("fork");
         	exit(errno);
 		}
-		fprintf(stdout, "child id: %d\n", child_pid);
+		fprintf(stdout, "child id: %d, iteration: %d\n", child_pid,  i);
 		fprintf(stdout, "testing");
     	// In the child process
     	if (child_pid == 0) {
