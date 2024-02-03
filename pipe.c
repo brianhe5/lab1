@@ -104,7 +104,6 @@ int main(int argc, char *argv[])
                     perror("execlp failed: bogus");
                     exit (errno);
                 }
-                continue;
             }
 
             //last process changes stdin to read and keeps fds(1) stdout the same
@@ -121,7 +120,6 @@ int main(int argc, char *argv[])
                     perror("execlp failed: bogus");
                     exit (errno);
                 }
-                continue;
             }
 
             //inner case
@@ -155,6 +153,8 @@ int main(int argc, char *argv[])
         int status;
         //pass the address of status variable to waitpid
         //waitpid stores exit status of child process in status
+		fprintf(stdout, "child_pid: %d\n", child_pid);
+
         if (waitpid(child_pid, &status, 0) == -1){
             perror("wait error");
             exit(errno);
