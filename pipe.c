@@ -61,9 +61,8 @@ int main(int argc, char *argv[])
 
 	//now, can be sure that there is at least 1 input
 	// for loop for intermittent case
-	for (int i = 1; i < argc; i++ )
+	for (int i = 1; i < argc-1; i++ )
 	{
-		fflush(stdout);
 		//creates pipe and its test
 		//pipe(pipe_fds) takes in integer array of size 2, creates read and write end of buffer
     	if (pipe(pipe_fds) == -1) {
