@@ -1,17 +1,19 @@
-## UID: 123456789
+## UID: 505804874
 
 ## Pipe Up
 
-One sentence description
+Program to imitate the pipe command funneling the output of one process into the input of the next process and so on.
 
 ## Building
 
-Explain briefly how to build your program
+Run make
+Run ./pipe and subsequence processes such as ls, cat, wc, sort,etc.
 
 ## Running
 
-Show an example run of your program, using at least two additional arguments, and what to expect
+./pipe ls cat wc returns  "     7        7      63      ", matching the output of
+ls | cat | wc
 
 ## Cleaning up
 
-Explain briefly how to clean up all binary files
+Run 'make clean' to clean up all binary files
