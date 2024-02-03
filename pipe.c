@@ -50,7 +50,7 @@ last child: points 0 (stdin) to last pipe's read
 int main(int argc, char *argv[])
 {
 	//check for occurence of at least 1 process
-	if (argc = 1){
+	if (argc == 1){
 		perror("arguments");
 		exit(EINVAL);
 	}
