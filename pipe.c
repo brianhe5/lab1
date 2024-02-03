@@ -55,14 +55,14 @@ int main(int argc, char *argv[])
 		exit(EINVAL);
 	}
 	for (int i = 1; i < argc - 1; i++) {
-		int pipefd[2];
-		if (pipe(pipefd) == -1){ // pipe err
+		int pipe_fds[2];
+		if (pipe(pipe_fds) == -1){ // pipe err
 			perror("error creating pipe!");
 			exit(errno);
 		}
-		pid_t childPid = fork();
+		pid_t child_pid = fork();
 
-		if (childPid < 0) {
+		if (child_pid < 0) {
 			perror("fork failed");
 			exit(errno);
 		}
